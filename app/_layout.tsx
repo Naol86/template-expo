@@ -1,14 +1,28 @@
-import React from "react";
 import { Stack } from "expo-router";
 import "../global.css";
 
-export default function RootLayout() {
+export default function Layout() {
   return (
     <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="(drawer)"
+        options={{
+          headerShown: false,
+        }}
+      />
       <Stack.Screen
         name="modal"
-        options={{ headerShown: false, presentation: "modal" }}
+        options={{
+          presentation: "transparentModal",
+          // animation: "fade",
+          headerShown: false,
+        }}
       />
     </Stack>
   );

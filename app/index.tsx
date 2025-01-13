@@ -1,13 +1,27 @@
-import { View, Text } from "react-native";
-import React from "react";
 import { Link } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Index() {
+export default function Home() {
   return (
-    <View className="items-center justify-center grow">
-      <Text className="text-3xl text-red-600">Index</Text>
-      <Link href="(tabs)/home">go to tabs</Link>
-      <Link href="modal">open modal</Link>
+    <View style={styles.container}>
+      <Text>Home screen</Text>
+      <Link href="/modal" style={styles.link}>
+        Open modal
+      </Link>
+      <Link href="/home">tabs</Link>
+      <Link href="/about">drawer</Link>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  link: {
+    paddingTop: 20,
+    fontSize: 20,
+  },
+});
